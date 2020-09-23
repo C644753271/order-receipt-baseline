@@ -27,4 +27,31 @@ public class LineItem {
     double totalAmount() {
         return price * quantity;
     }
+
+    /**
+     * 税费计算
+     * @return
+     */
+    public double getSalesTax() {
+        return  this.totalAmount() * .10;
+    }
+
+    /**
+     * 总价格
+     * @return
+     */
+    public double getTotalAmount() {
+        return totalAmount() + getSalesTax();
+    }
+
+    /**
+     * 答应lineItem
+     * @param lineItem
+     */
+    public StringBuilder printLineItemStr(LineItem lineItem) {
+        StringBuilder output = new StringBuilder();
+        output.append(lineItem.getDescription() + '\t' + lineItem.getPrice() +
+                '\t' + lineItem.getQuantity() + '\t' + lineItem.totalAmount() + '\n');
+        return output;
+    }
 }
