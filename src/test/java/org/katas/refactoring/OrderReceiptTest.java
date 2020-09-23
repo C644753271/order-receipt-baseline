@@ -1,11 +1,11 @@
 package org.katas.refactoring;
 
+import org.hamcrest.CoreMatchers;
 import org.junit.Test;
 
 import java.util.ArrayList;
 
 import static org.junit.Assert.assertThat;
-import static org.junit.matchers.JUnitMatchers.containsString;
 
 public class OrderReceiptTest {
     @Test
@@ -15,8 +15,8 @@ public class OrderReceiptTest {
 
         String output = receipt.printReceipt();
 
-        assertThat(output, containsString("Mr X"));
-        assertThat(output, containsString("Chicago, 60601"));
+        assertThat(output, CoreMatchers.containsString("Mr X"));
+        assertThat(output, CoreMatchers.containsString("Chicago, 60601"));
     }
 
     @Test
@@ -30,11 +30,11 @@ public class OrderReceiptTest {
 
         String output = receipt.printReceipt();
 
-        assertThat(output, containsString("milk\t10.0\t2\t20.0\n"));
-        assertThat(output, containsString("biscuits\t5.0\t5\t25.0\n"));
-        assertThat(output, containsString("chocolate\t20.0\t1\t20.0\n"));
-        assertThat(output, containsString("Sales Tax\t6.5"));
-        assertThat(output, containsString("Total Amount\t71.5"));
+        assertThat(output, CoreMatchers.containsString("milk\t10.0\t2\t20.0\n"));
+        assertThat(output, CoreMatchers.containsString("biscuits\t5.0\t5\t25.0\n"));
+        assertThat(output, CoreMatchers.containsString("chocolate\t20.0\t1\t20.0\n"));
+        assertThat(output, CoreMatchers.containsString("Sales Tax\t6.5"));
+        assertThat(output, CoreMatchers.containsString("Total Amount\t71.5"));
     }
 
 }
